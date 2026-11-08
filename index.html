@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17191b">
+<title>The Little Things We Remember</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app">
+
+  <!-- HALAMAN 1: PEMBUKA -->
+  <section class="page active" id="page1">
+    <div class="cover">
+      <div class="cover-content">
+        <p class="eyebrow">A little birthday archive · made for you</p>
+        <h1>The Little Things<br>We Remember.</h1>
+        <p class="subline">
+          Beberapa cerita random, keputusan yang agak meragukan,
+          dan hal-hal kecil yang ternyata layak diingat.
+        </p>
+        <p class="tiny-note">"Tenang, ini bukan tugas kuliah."</p>
+
+        <div class="actions">
+          <button class="btn" onclick="goTo(2)">
+            Open our little archive ↗
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HALAMAN 2: KARTU KENANGAN -->
+  <section class="page" id="page2">
+
+    <div class="topline">
+      <p class="eyebrow">Chapter 01 · The memories</p>
+      <span class="counter">02 / 05</span>
+    </div>
+
+    <div class="section-intro">
+      <h2>Things we've done.</h2>
+      <p>
+        Tempat-tempat baru, rencana yang kadang nggak jelas,
+        dan cerita yang ujung-ujungnya selalu bisa diketawain lagi.
+      </p>
+      <p class="small">Ketuk kartu buat membuka ceritanya.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <button class="card-button" onclick="openStory('coffee')">
+          <div class="photo-wrap">
+            <img src="coffe.jpg" alt="The Coffee Incident">
+            <span class="open-mark">↗</span>
+          </div>
+          <p class="tag">Memory 001</p>
+          <h3>The Coffee Incident</h3>
+          <p>Kopi hari ini, lambung bermasalah besok.</p>
+        </button>
+      </article>
+
+      <article class="card">
+        <button class="card-button" onclick="openStory('sleep')">
+          <div class="photo-wrap">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Foto kamar">
+            <span class="open-mark">↗</span>
+          </div>
+          <p class="tag">Memory 002</p>
+          <h3>The Sleep Betrayal</h3>
+          <p>Obrolan serius berakhir dengan ditinggal tidur.</p>
+        </button>
+      </article>
+
+      <article class="card">
+        <button class="card-button" onclick="openStory('beach')">
+          <div class="photo-wrap">
+            <img src="pantai.jpg" alt="The Solar Disaster">
+            <span class="open-mark">↗</span>
+          </div>
+          <p class="tag">Memory 003</p>
+          <h3>The Solar Disaster</h3>
+          <p>Liburan yang punya plot twist.</p>
+        </button>
+      </article>
+
+      <article class="card">
+        <button class="card-button" onclick="openStory('story')">
+          <div class="photo-wrap">
+            <img src="curug.png" alt="Story">
+            <span class="open-mark">↗</span>
+          </div>
+          <p class="tag">Memory 004</p>
+          <h3>Story</h3>
+          <p>Nggak harus ada acara penting buat pergi bareng.</p>
+        </button>
+      </article>
+      
+    </div>
+
+    <div class="footer-nav">
+      <button class="btn secondary" onclick="goTo(1)">← Back</button>
+      <button class="btn" onclick="goTo(3)">Next: The Archive →</button>
+    </div>
+  </section>
+
+
+  <!-- HALAMAN 3: ARCHIVE -->
+  <section class="page" id="page3">
+
+    <div class="topline">
+      <p class="eyebrow">Chapter 02 · Classified memories</p>
+      <span class="counter">03 / 05</span>
+    </div>
+
+    <div class="section-intro">
+      <h2>The Archive.</h2>
+      <p>
+        Setiap kejadian meninggalkan jejak. Beberapa mungkin memalukan, sebagian lainnya sulit dipercaya. Tapi tenang, semuanya sudah masuk arsip.
+      </p>
+    </div>
+
+    <div class="archive-list">
+
+      <div class="archive-item">
+        <div class="archive-icon">☕</div>
+        <button onclick="openStory('coffee')">
+          <h3>FILE 001 · Lambung vs. Coffee</h3>
+          <p>Barang bukti: satu gelas kopi. Dampak: jantung berdebar dan lambung mengajukan protes.
+          </p>
+        </button>
+        
+        <span class="status">✓</span>
+        <div class="file-status status-closed">
+  <span class="status-light"></span>
+  CASE CLOSED
+</div>
+      </div>
+
+      <div class="archive-item">
+        <div class="archive-icon">😴</div>
+        <button onclick="openStory('sleep')">
+          <h3>FILE 002 · Professional Sleep Betrayer</h3>
+          <p>Tersangka: rasa kantuk.
+Korban: percakapan tengah malam yang ditinggalkan begitu saja.
+          </p>
+        </button>
+        <span class="status">✓</span>
+        <div class="file-status status-sleep">
+  <span class="status-light"></span>
+  SUSPECT ASLEEP
+</div>
+      </div>
+
+      <div class="archive-item">
+        <div class="archive-icon">🌊</div>
+        <button onclick="openStory('beach')">
+          <h3>FILE 003 · Unexpected Adventure</h3>
+          <p>Catatan perjalanan: beda provinsi, hilang arah, dan kejutan solar di perjalanan pulang.
+          </p>
+        </button>
+        <span class="status">✓</span>
+        <div class="file-status status-survived">
+  <span class="status-light"></span>
+  SURVIVED
+</div>
+      </div>
+
+      <div class="archive-item locked">
+        <div class="archive-icon">🔒</div>
+        <button onclick="unlockFinal()">
+          <h3>FILE 004 · TOP SECRET</h3>
+          <p>Ada satu berkas terakhir yang masih dirahasiakan. Buka untuk melanjutkan misi berikutnya.</p>
+        </button>
+        <span class="status">🔒</span>
+        <div class="file-status status-classified">
+  <span class="status-light"></span>
+  CLASSIFIED
+</div>
+      </div>
+
+    </div>
+
+    <div class="callout">
+      <p class="eyebrow">System note</p>
+      <p style="margin:0">
+        Arsip ini dibuat bukan untuk mengungkit kejadian lama, melainkan untuk memastikan tidak ada satu pun cerita kecil yang terlupakan.
+
+Beberapa mungkin konyol, beberapa mungkin sedikit menyakitkan, tapi semuanya pernah menjadi bagian dari perjalanan kita.
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <button class="btn secondary" onclick="goTo(2)">← Back</button>
+      <button class="btn" onclick="unlockFinal()">Open final file →</button>
+    </div>
+
+  </section>
+
+
+  <!-- HALAMAN 4: PILIHAN MAKANAN -->
+  <section class="page" id="page4">
+
+    <div class="topline">
+      <p class="eyebrow">Chapter 03 · A very serious decision</p>
+      <span class="counter">04 / 05</span>
+    </div>
+
+    <div class="section-intro">
+      <h2>Pick your treat.</h2>
+      <p>
+        Pilih makanan atau minuman yang paling menggambarkan diri lo.
+        Nggak ada jawaban salah. Ada kemungkinan sedikit di-judge.
+      </p>
+      <p class="small">Buka keempat kartu untuk menemukan pesan bonus.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card food-card" id="food-cireng">
+        <button class="card-button" onclick="openFood('cireng')">
+          <div class="photo-wrap">
+            <img src="cireng.jpeg" alt="Cireng">
+            <span class="open-mark">＋</span>
+          </div>
+          <p class="tag">Choice 001</p>
+          <h3>Cireng</h3>
+          <p>Crunchy outside, complicated inside.</p>
+        </button>
+      </article>
+
+      <article class="card food-card" id="food-dimsum">
+        <button class="card-button" onclick="openFood('dimsum')">
+          <div class="photo-wrap">
+            <img src="dimsum.jpg" alt="Dimsum">
+            <span class="open-mark">＋</span>
+          </div>
+          <p class="tag">Choice 002</p>
+          <h3>Dimsum</h3>
+          <p>Small things, big happiness.</p>
+        </button>
+      </article>
+
+      <article class="card food-card" id="food-coffee">
+        <button class="card-button" onclick="openFood('coffee')">
+          <div class="photo-wrap">
+            <img src="coffe1.jpg" alt="Coffe">
+            <span class="open-mark">＋</span>
+          </div>
+          <p class="tag">Choice 003</p>
+          <h3>Coffee</h3>
+          <p>We need to talk about your stomach.</p>
+        </button>
+      </article>
+
+      <article class="card food-card" id="food-matcha">
+        <button class="card-button" onclick="openFood('matcha')">
+          <div class="photo-wrap">
+            <img src="matcha.jpg" alt="Matcha">
+            <span class="open-mark">＋</span>
+          </div>
+          <p class="tag">Choice 004</p>
+          <h3>Matcha</h3>
+          <p>Calm drink, chaotic life.</p>
+        </button>
+      </article>
+
+    </div>
+
+    <div class="progress-label">
+      <span>Secret messages unlocked</span>
+      <span id="food-count">0 / 4</span>
+    </div>
+
+    <div class="progress">
+      <div class="progress-fill" id="food-progress"></div>
+    </div>
+
+    <div class="bonus" id="bonus">
+      <p class="eyebrow">All choices unlocked</p>
+      <h3>Congratulations, snack investigator.</h3>
+      <p>
+        Lo berhasil membuka semua pilihan.
+        Sama kayak pertemanan kita, hal-hal kecil yang kelihatannya
+        nggak penting justru bisa jadi kenangan yang paling diingat.
+      </p>
+      <p style="margin-bottom:0">
+        Sekarang ada satu hal terakhir yang pengen gua sampein.
+      </p>
+      <div class="actions">
+        <button class="btn" onclick="goTo(5)">One last thing →</button>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <button class="btn secondary" onclick="goTo(3)">← Back to archive</button>
+      <button class="btn" id="letter-btn" onclick="goTo(5)" disabled>
+        Birthday letter 🔒
+      </button>
+    </div>
+
+    <p class="hint">
+      Catatan: tombol surat akan terbuka setelah semua kartu makanan dibaca.
+    </p>
+
+  </section>
+
+
+  <!-- HALAMAN 5: SURAT ULANG TAHUN -->
+  <section class="page letter-page" id="page5">
+
+    <div style="width:100%">
+
+      <div class="topline">
+        <p class="eyebrow">The final page · Just for you</p>
+        <span class="counter">05 / 05</span>
+      </div>
+
+      <article class="letter">
+
+        <p class="eyebrow">A letter for you</p>
+
+        <h2>Happy birthday,<br>partner in crime.</h2>
+
+        <p>
+          Aku nggak mau bikin ucapan yang isinya cuma "semoga panjang umur dan sehat selalu", walaupun tentu saja itu juga salah satu doa yang paling aku harapkan buat kamu.
+        </p>
+
+        <p>
+          Aku tahu akhir-akhir ini kamu sedang berusaha menjalani banyak hal sekaligus. Kuliah, kerja, memikirkan masa depan, dan mungkin ada hari-hari ketika semuanya terasa melelahkan. Nggak semua hal bisa kamu ceritakan, dan nggak semua perjuangan langsung kelihatan hasilnya.
+        </p>
+
+        <p>
+          Jadi, aku cuma mau bilang pelan-pelan aja, yaa. Kamu nggak harus selalu kuat setiap hari. Istirahat bukan berarti menyerah, dan perjalananmu nggak harus sama cepatnya dengan orang lain. Jangan terlalu keras sama diri sendiri, kamu bukan mesin yang bisa terus dipakai tanpa istirahat.
+        </p>
+
+        <p>
+          Semoga semua yang sedang kamu perjuangkan sekarang suatu hari nanti bisa kamu lihat kembali dengan bangga. Semoga kuliahmu dimudahkan, pekerjaanmu makin lancar, rezekimu makin baik, badanmu tetap sehat, dan kamu masih punya banyak waktu untuk menikmati hal-hal kecil yang bikin bahagia.
+        </p>
+
+        <p>
+          Makasih udah jadi salah satu orang yang bisa aku ajak pergi tanpa harus punya alasan penting. Dari nongkrong random, obrolan sebelum tidur yang ternyata sepihak karena ada yang keburu tidur, sampai perjalanan pantai dengan plot twist yang sama sekali nggak kita duga. Sepertinya kita memang punya bakat membuat cerita sederhana jadi luar biasa. 😂
+        </p>
+
+        <p>
+          Semoga masih banyak tempat baru yang bisa kita datangi, makanan baru yang bisa kita coba, dan cerita absurd yang nantinya bisa kita tertawakan lagi. Masih banyak agenda yang belum terlaksana, jadi jangan buru-buru pensiun dari pertemanan ini, ya.
+        </p>
+        
+        <p>
+            Terakhir, maaf karena aku cuma bisa memberikan sesuatu yang sederhana seperti ini. Aku tahu ini bukan hadiah besar atau sesuatu yang bisa kamu pegang dan simpan di meja, tapi aku harap setiap halaman kecil di dalamnya bisa jadi pengingat bahwa ada seseorang yang ikut senang melihat kamu bertumbuh dan berharap banyak hal baik datang ke hidupmu.
+        </p>
+        
+        <p>
+            Maaf juga karena sampai sekarang kita belum bisa bertemu dalam waktu dekat. Ada jarak dan kesibukan yang belum memungkinkan kita untuk menghabiskan waktu bersama seperti biasanya. Tapi semoga nanti ada kesempatan untuk bertemu lagi, ngobrol ngalor-ngidul, berburu jajanan, dan membuat cerita baru. Kali ini, kalau bisa, pulangnya jangan sampai mencium aspal lagi WKWKWK.
+        </p>
+
+        <p class="signoff">
+          Happy birthday. Take your time, and take care of yourself. 🤍
+        </p>
+
+        <p class="small" style="color:#77736d;margin-top:20px">
+          — dari teman lo yang masih mau ngajak jalan lagi
+          (dengan rute yang lebih aman, semoga).
+        </p>
+
+      </article>
+     
+      
+  <!-- ENDING -->
+  <div class="album-ending">
+
+    <div class="album-divider"></div>
+
+    <p class="album-subtitle">UNTIL THE NEXT MEMORY</p>
+
+    <h2>And this is just a little part of our story.</h2>
+
+    <p>
+      Terima kasih telah menjadi bagian dari semua momen spontan ini. Semoga kita bisa mengunjungi lebih banyak tempat, tertawa lebih banyak, dan menciptakan lebih banyak kenangan.
+    </p>
+
+       <button onclick="goTo(6)">
+  Open Our Memories
+</button>
+
+  </div>
+
+</section>
+
+<!-- =================================
+     PAGE 6 - MEMORY ALBUM
+================================== -->
+
+<section class="page album-page" id="page6">
+
+  <div class="album-header">
+
+    <p class="album-subtitle">A COLLECTION OF MEMORIES</p>
+
+    <h1>22 Little Pieces of Us.</h1>
+
+    <p class="album-description">
+      Some random moments, some unforgettable memories.
+      A little collection of the things I never want to forget.
+    </p>
+
+    <div class="album-divider"></div>
+
+    <p class="album-count">19 PHOTOS · 3 VIDEOS</p>
+
+  </div>
+
+
+  <!-- MEMORY GALLERY -->
+
+  <div class="memory-gallery">
+
+    <!-- PHOTO 01 -->
+    <div class="gallery-item">
+      <img src="photo1.jpg"
+           alt="Memory 01"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jangan terlalu keras sama diri sendiri, kamu sudah hebat bisa sampai sejauh ini.</p>
+    </div>
+
+    <!-- PHOTO 02 -->
+    <div class="gallery-item">
+      <img src="photo2.jpg"
+           alt="Memory 02"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Kalau hari ini terasa berat, istirahat dulu, jangan malah menyerah dan menghilang WKWK.</p>
+    </div>
+
+    <!-- VIDEO 01 -->
+    <div class="gallery-item gallery-video">
+      <video controls playsinline preload="metadata">
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+      <p class="gallery-caption">Pelan-pelan saja, kamu nggak harus menyelesaikan semuanya hari ini, yang penting tetap melangkah.</p>
+    </div>
+
+    <!-- PHOTO 03 -->
+    <div class="gallery-item">
+      <img src="photo3.jpg"
+           alt="Memory 03"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jangan lupa bangga sama dirimu sendiri, meskipun pencapaianmu belum sebesar ekspektasimu.</p>
+    </div>
+
+    <!-- PHOTO 04 -->
+    <div class="gallery-item">
+      <img src="photo4.jpg"
+           alt="Memory 04"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Semoga kamu selalu dikelilingi orang baik, dan jangan lupa aku termasuk salah satunya 😂</p>
+    </div>
+
+    <!-- PHOTO 05 -->
+    <div class="gallery-item">
+      <img src="photo5.jpg"
+           alt="Memory 05"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Nggak harus selalu kuat ya, sesekali boleh mengeluh tanpa harus merasa bersalah.</p>
+    </div>
+
+    <!-- PHOTO 06 -->
+    <div class="gallery-item">
+      <img src="photo6.jpg"
+           alt="Memory 06"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jalani hidup dengan waktumu sendiri, ini bukan lomba siapa yang paling cepat sukses.</p>
+    </div>
+
+    <!-- VIDEO 02 -->
+    <div class="gallery-item gallery-video">
+      <video controls playsinline preload="metadata">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+      <p class="gallery-caption">Semoga suatu hari kamu bisa bangga dengan semua perjuanganmu, dan jangan lupa traktir aku saat berhasil WKWK.</p>
+    </div>
+
+    <!-- PHOTO 07 -->
+    <div class="gallery-item">
+      <img src="photo7.jpg"
+           alt="Memory 07"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Semoga semua usaha kecilmu hari ini menjadi kebahagiaan besar di kemudian hari.</p>
+    </div>
+
+    <!-- PHOTO 08 -->
+    <div class="gallery-item">
+      <img src="photo8.jpg"
+           alt="Memory 08"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jangan lupa bahagia, jangan kebanyakan overthinking, nanti rambutmu ikut pusing.</p>
+    </div>
+
+    <!-- PHOTO 09 -->
+    <div class="gallery-item">
+      <img src="photo9.jpg"
+           alt="Memory 09"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Masih banyak tempat indah yang belum kamu kunjungi, jadi jangan malas keluar rumah terus.</p>
+    </div>
+
+    <!-- PHOTO 10 -->
+    <div class="gallery-item">
+      <img src="photo10.jpg"
+           alt="Memory 10"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Semoga selalu ada alasan untuk tersenyum, sekalipun alasannya cuma makanan enak.</p>
+    </div>
+
+    <!-- PHOTO 11 -->
+    <div class="gallery-item">
+      <img src="photo11.jpg"
+           alt="Memory 11"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Gagal sekali bukan berarti selesai, bahkan kita saja sering salah pilih menu makanan.</p>
+    </div>
+
+    <!-- VIDEO 03 -->
+    <div class="gallery-item gallery-video">
+      <video controls playsinline preload="metadata">
+        <source src="video3.mp4" type="video/mp4">
+      </video>
+      <p class="gallery-caption">Semoga kita masih punya banyak kesempatan untuk tertawa, bertumbuh, dan membuat cerita baru bersama. ❤️</p>
+    </div>
+
+    <!-- PHOTO 12 -->
+    <div class="gallery-item">
+      <img src="photo12.jpg"
+           alt="Memory 12"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jaga kesehatan baik-baik, terutama lambungmu, kita nggak mau mengulang drama kopi lagi. 😭</p>
+    </div>
+
+    <!-- PHOTO 13 -->
+    <div class="gallery-item">
+      <img src="photo13.jpg"
+           alt="Memory 13"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jangan pernah berhenti belajar dan mencoba, siapa tahu hal hebat berikutnya sedang menunggumu.</p>
+    </div>
+
+    <!-- PHOTO 14 -->
+    <div class="gallery-item">
+      <img src="photo14.jpg"
+           alt="Memory 14"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Kalau dunia terasa terlalu ramai, ingat kamu selalu boleh berhenti sejenak untuk bernapas.</p>
+    </div>
+
+    <!-- PHOTO 15 -->
+    <div class="gallery-item">
+      <img src="photo15.jpg"
+           alt="Memory 15"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Nggak perlu membandingkan hidupmu dengan orang lain, kamu punya cerita dan waktumu sendiri.</p>
+    </div>
+
+    <!-- PHOTO 16 -->
+    <div class="gallery-item">
+      <img src="photo16.jpg"
+           alt="Memory 16"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Ingat, kamu juga berhak bahagia tanpa harus menunggu semuanya sempurna.</p>
+    </div>
+
+    <!-- PHOTO 17 -->
+    <div class="gallery-item">
+      <img src="photo17.jpg"
+           alt="Memory 17"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Semoga satu per satu doa yang kamu simpan diam-diam bisa segera menjadi kenyataan.</p>
+    </div>
+
+    <!-- PHOTO 18 -->
+    <div class="gallery-item">
+      <img src="photo18.jpg"
+           alt="Memory 18"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Tetap jadi orang baik, tapi jangan sampai lupa memperlakukan dirimu sendiri dengan baik.</p>
+    </div>
+
+    <!-- PHOTO 19 -->
+    <div class="gallery-item">
+      <img src="photo19.jpg"
+           alt="Memory 19"
+           class="gallery-photo"
+           onclick="openPhoto(this)">
+      <p class="gallery-caption">Jangan cepat kehabisan waktu buat jalan bareng aku, masih banyak tempat yang harus kita datangi. ❤️</p>
+    </div>
+
+  </div>
+
+<!-- PHOTO LIGHTBOX -->
+<div id="photo-lightbox" class="photo-lightbox"
+     onclick="closePhoto()">
+
+  <button class="lightbox-close"
+          onclick="closePhoto()">
+    &times;
+  </button>
+
+  <img id="lightbox-image" src="" alt="Enlarged memory">
+
+</div>
+
+
+      <div class="footer-nav">
+        <button class="btn secondary" onclick="goTo(4)">← Back</button>
+        <button onclick="goTo(7)">
+  One Last Surprise →
+</button>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<!-- PAGE 07: BIRTHDAY FINALE -->
+<div class="page" id="page7">
+
+  <div class="finale-container">
+
+    <p class="finale-eyebrow">
+      THE FINAL MOMENT · JUST FOR YOU
+    </p>
+
+    <h1 class="finale-title">
+      Make a Wish.
+    </h1>
+
+    <p class="finale-subtitle">
+      One more little surprise before you go...
+    </p>
+
+    <!-- BIRTHDAY CAKE -->
+    <div class="birthday-scene">
+
+      <div class="cake">
+
+        <!-- ANGKA 22 -->
+        <div class="candles">
+
+          <div class="number-candle">
+            <span class="flame" id="flame1"></span>
+            <span class="candle-number">2</span>
+          </div>
+
+          <div class="number-candle">
+            <span class="flame" id="flame2"></span>
+            <span class="candle-number">2</span>
+          </div>
+
+        </div>
+
+        <!-- CAKE BODY -->
+        <div class="cake-top"></div>
+        <div class="cake-body">
+          <div class="cake-icing"></div>
+        </div>
+        <div class="cake-bottom"></div>
+
+      </div>
+
+    </div>
+
+    <h2 class="chapter-title">
+      Chapter 22 Begins...
+    </h2>
+
+    <p class="wish-instruction" id="wishInstruction">
+      Tutup mata, buat satu permintaan.
+      Nggak perlu kasih tahu siapa-siapa.
+    </p>
+
+    <button
+      class="wish-button"
+      id="wishButton"
+      onclick="blowCandles()">
+      Aku sudah tiup!
+    </button>
+
+    <!-- PESAN SETELAH LILIN PADAM -->
+    <div class="final-message" id="finalMessage">
+
+      <h2>Your Wish Is Yours to Keep.</h2>
+
+      <p>
+        Semoga satu per satu harapanmu menemukan
+        jalannya untuk menjadi nyata.
+        Terus tumbuh, terus bahagia,
+        dan jangan lupa menikmati perjalananmu.
+      </p>
+
+      <h3>
+        Once Again, Happy Birthday. 🤍
+      </h3>
+
+      <span>END OF THIS LITTLE SURPRISE</span>
+    <button class="btn secondary" onclick="goTo(1)">Read again ↻</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- POPUP CERITA KENANGAN -->
+<div class="modal" id="story-modal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="story-title"
+     onclick="if(event.target===this)closeModal()">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal()" aria-label="Tutup">
+      ×
+    </button>
+
+    <p class="eyebrow" id="story-tag">MEMORY FILE</p>
+    <h2 id="story-title">Memory title</h2>
+    <p id="story-text"></p>
+
+    <div class="actions">
+      <button class="btn" onclick="closeModal()">Okay, lanjut →</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- POPUP PESAN PILIHAN MAKANAN -->
+<div class="modal" id="food-modal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="food-title"
+     onclick="if(event.target===this)closeFoodModal()">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeFoodModal()" aria-label="Tutup">
+      ×
+    </button>
+
+    <p class="eyebrow" id="food-tag">SECRET MESSAGE</p>
+    <h2 id="food-title">Choice unlocked</h2>
+    <p id="food-text"></p>
+
+    <div class="actions">
+      <button class="btn" onclick="closeFoodModal()">Got it ✓</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- BACKGROUND MUSIC -->
+<audio id="background-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MUSIC BUTTON -->
+<button id="music-button" onclick="toggleMusic()">
+  <span id="music-icon">♫</span>
+  <span id="music-label">Play Music</span>
+</button>
+
+
+<!-- MEMANGGIL JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
